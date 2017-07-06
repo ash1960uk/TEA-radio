@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino -->
+<html lang="en" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound</title>
+<meta name="generator" content="MediaWiki 1.24.1">
+<link rel="shortcut icon" href="http://linksprite.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://linksprite.com/wiki/opensearch_desc.php5" title="LinkSprite Playgound (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://linksprite.com/wiki/api.php5?action=rsd">
+<link rel="alternate" hreflang="x-default" href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino">
+<link rel="alternate" type="application/atom+xml" title="LinkSprite Playgound Atom feed" href="http://linksprite.com/wiki/index.php5?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="./16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound_files/load.php5">
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: linkspri_wiki:resourceloader:filter:minify-css:7:869aa9133c31e6040d4830b259da96a8 */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+/* cache key: linkspri_wiki:resourceloader:filter:minify-css:7:f8d0c6895ce3ae14434c16b8fca59432 */
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(http://linksprite.com/wiki/resources/src/mediawiki.action/images/green-checkmark.png?2014-12-29T18:48:20Z)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+/* cache key: linkspri_wiki:resourceloader:filter:minify-css:7:48a2dbee62ccf46467b56f7500b3d425 */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+/* cache key: linkspri_wiki:resourceloader:filter:minify-css:7:ae3fa4570b5ac0c6cf7b3776c8ae4d6f */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: linkspri_wiki:resourceloader:filter:minify-css:7:b40fe9379b50d6744c9618dabcd48417 */</style>
+<script src="./16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound_files/load(1).php5"></script><script src="./16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound_files/load(2).php5"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"16_X_2_LCD_Keypad_Shield_for_Arduino","wgTitle":"16 X 2 LCD Keypad Shield for Arduino","wgCurRevisionId":7361,"wgRevisionId":7361,"wgArticleId":4,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"16_X_2_LCD_Keypad_Shield_for_Arduino","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":5,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"watchrollback":0,
+"wllimit":250,"useeditwarning":1,"prefershttps":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{});
+/* cache key: linkspri_wiki:resourceloader:filter:minify-js:7:2ffb09fddb30ef53a64cefb237597916 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script><script src="./16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound_files/load(3).php5"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-16_X_2_LCD_Keypad_Shield_for_Arduino skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">16 X 2 LCD Keypad Shield for Arduino</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From LinkSprite Playgound</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#mw-navigation">navigation</a>, 					<a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="hf-nsheader"></div><div class="hf-header"></div><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#Features"><span class="tocnumber">2</span> <span class="toctext">Features</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#Application_Ideas"><span class="tocnumber">3</span> <span class="toctext">Application Ideas</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#Cautions"><span class="tocnumber">4</span> <span class="toctext">Cautions</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#Schematic"><span class="tocnumber">5</span> <span class="toctext">Schematic</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#Specification"><span class="tocnumber">6</span> <span class="toctext">Specification</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#Pin_definition_and_Rating"><span class="tocnumber">7</span> <span class="toctext">Pin definition and Rating</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#Mechanic_Dimensions"><span class="tocnumber">8</span> <span class="toctext">Mechanic Dimensions</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#Usage"><span class="tocnumber">9</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#pcDuino_Sample_Code"><span class="tocnumber">10</span> <span class="toctext">pcDuino Sample Code</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#FAQ"><span class="tocnumber">11</span> <span class="toctext">FAQ</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#Support"><span class="tocnumber">12</span> <span class="toctext">Support</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#Resources"><span class="tocnumber">13</span> <span class="toctext">Resources</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#How_to_buy"><span class="tocnumber">14</span> <span class="toctext">How to buy</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#See_Also"><span class="tocnumber">15</span> <span class="toctext">See Also</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#Licensing"><span class="tocnumber">16</span> <span class="toctext">Licensing</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>We wanted to make it easier for people to get these LCD into their projects so we devised a shield that lets you control a 16x2 Character LCD backlight with a potentiometer AND 5 keypad pins using 6 digital pins on the Arduino!
+</p><p><br>
+This shield is perfect for when you want to build a stand-alone project with its own user interface. The 4 directional buttons plus select button allows basic control without having to attach a bulky computer. 
+</p>
+<ul><li>Comes with a 16x2 green backlight LCD, negative display</li>
+<li>Plug and play with any Arduino 'classic' - UNO, duemilanove, diecimilla, etc.</li>
+<li>Uses 6 pins of Arduino to control LCD and A0 pin for 5 buttons. </li></ul>
+<p><br>
+</p><p>The LCD and Keypad Shield gives you a handy 16-character by 2-line display, 5 buttons and a controllable backlight, plug it straight in on top of your Arduino board or other project shields. The display is set behind the shield for a low profile fitment and nice look and we've included panel mounting screw holes in the corners.
+</p><p>It's great when you want to build a stand-alone project with its own user interface that doesn't require a computer attached to send commands to your Arduino.
+</p><p>Works perfectly in 4-bit mode with the "LiquidCrystal" library included with the Arduino IDE, allowing you to control the LCD with a total of just 6 digital I/O lines. We've deliberately picked D4-D9 so that it doesn't interfere with pins required by other popular products such as the Ethernet Shield and EtherTen, so you can stack this on top of other shields to give you a local display.
+</p><p>The buttons provide "left", "right", "up", "down", and "select" while using just one analog input. That leaves the other analog inputs free for you to use in your projects.
+</p><p>The LCD backlight is connected to a potentiometer can be controlled for on/off, brightness.
+</p><p><br>
+<a href="http://linksprite.com/wiki/index.php5?title=File:N07DH_WITHOUT_PACKAGED_FRONT.jpg" class="image"><img alt="N07DH WITHOUT PACKAGED FRONT.jpg" src="./16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound_files/640px-N07DH_WITHOUT_PACKAGED_FRONT.jpg" width="640" height="640" srcset="/wiki/images/thumb/3/37/N07DH_WITHOUT_PACKAGED_FRONT.jpg/960px-N07DH_WITHOUT_PACKAGED_FRONT.jpg 1.5x, /wiki/images/3/37/N07DH_WITHOUT_PACKAGED_FRONT.jpg 2x"></a>
+</p><p><a href="http://linksprite.com/wiki/index.php5?title=File:N07DH_WITHOUT_PACKAGED_BACK.jpg" class="image"><img alt="N07DH WITHOUT PACKAGED BACK.jpg" src="./16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound_files/640px-N07DH_WITHOUT_PACKAGED_BACK.jpg" width="640" height="426" srcset="/wiki/images/thumb/b/b5/N07DH_WITHOUT_PACKAGED_BACK.jpg/960px-N07DH_WITHOUT_PACKAGED_BACK.jpg 1.5x, /wiki/images/b/b5/N07DH_WITHOUT_PACKAGED_BACK.jpg 2x"></a>
+</p><p><a href="http://linksprite.com/wiki/index.php5?title=File:N07DH_PACKAGED_FRONT.jpg" class="image"><img alt="N07DH PACKAGED FRONT.jpg" src="./16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound_files/640px-N07DH_PACKAGED_FRONT.jpg" width="640" height="640" srcset="/wiki/images/thumb/c/c3/N07DH_PACKAGED_FRONT.jpg/960px-N07DH_PACKAGED_FRONT.jpg 1.5x, /wiki/images/c/c3/N07DH_PACKAGED_FRONT.jpg 2x"></a>
+</p><p><a href="http://linksprite.com/wiki/index.php5?title=File:N07DH_PACKAGED_BACK.jpg" class="image"><img alt="N07DH PACKAGED BACK.jpg" src="./16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound_files/640px-N07DH_PACKAGED_BACK.jpg" width="640" height="640" srcset="/wiki/images/thumb/3/34/N07DH_PACKAGED_BACK.jpg/960px-N07DH_PACKAGED_BACK.jpg 1.5x, /wiki/images/3/34/N07DH_PACKAGED_BACK.jpg 2x"></a>
+</p>
+<h2><span class="mw-headline" id="Features">Features</span></h2>
+<ul><li>16x2 LCD using HD44780-compatible display module (black characters on green background).</li>
+<li>5 buttons on one analog input (A0).</li>
+<li>LCD backlight with current limiting, brightness and on/off controllable by a adjustable potentiometer.</li>
+<li>Recessed LCD, panel mount screw holes and button layout suitable for panel or cabinet mounting if desired.</li>
+<li>Reset button.</li>
+<li>Power supply smoothing capacitor.</li></ul>
+<h2><span class="mw-headline" id="Application_Ideas">Application Ideas</span></h2>
+<p><b>test code</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="c source-c"><pre class="de1"><span class="co2">#include &lt;LiquidCrystal.h&gt;</span>
+<span class="co2">#include &lt;LCDKeypad.h&gt;</span>
+LiquidCrystal lcd<span class="br0">(</span><span class="nu0">8</span><span class="sy0">,</span> <span class="nu0">13</span><span class="sy0">,</span> <span class="nu0">9</span><span class="sy0">,</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">5</span><span class="sy0">,</span> <span class="nu0">6</span><span class="sy0">,</span> <span class="nu0">7</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="kw4">char</span> msgs<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">16</span><span class="br0">]</span> <span class="sy0">=</span> <span class="br0">{</span><span class="st0">"Right Key OK "</span><span class="sy0">,</span>
+                    <span class="st0">"Up Key OK    "</span><span class="sy0">,</span>               
+                    <span class="st0">"Down Key OK  "</span><span class="sy0">,</span>
+                    <span class="st0">"Left Key OK  "</span><span class="sy0">,</span>
+                    <span class="st0">"Select Key OK"</span> <span class="br0">}</span><span class="sy0">;</span>
+<span class="kw4">int</span> adc_key_val<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span> <span class="sy0">=</span><span class="br0">{</span><span class="nu0">50</span><span class="sy0">,</span> <span class="nu0">200</span><span class="sy0">,</span> <span class="nu0">400</span><span class="sy0">,</span> <span class="nu0">600</span><span class="sy0">,</span> <span class="nu0">800</span> <span class="br0">}</span><span class="sy0">;</span>
+<span class="kw4">int</span> NUM_KEYS <span class="sy0">=</span> <span class="nu0">5</span><span class="sy0">;</span>
+<span class="kw4">int</span> adc_key_in<span class="sy0">;</span>
+<span class="kw4">int</span> key<span class="sy0">=-</span><span class="nu0">1</span><span class="sy0">;</span>
+<span class="kw4">int</span> oldkey<span class="sy0">=-</span><span class="nu0">1</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  lcd.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">16</span><span class="sy0">,</span> <span class="nu0">2</span><span class="br0">)</span><span class="sy0">;</span>
+  lcd.<span class="me1">clear</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+  lcd.<span class="me1">setCursor</span><span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">;</span>
+  lcd.<span class="me1">print</span><span class="br0">(</span><span class="st0">"     helle! "</span><span class="br0">)</span><span class="sy0">;</span>
+  lcd.<span class="me1">print</span><span class="br0">(</span><span class="st0">"      welcome!"</span><span class="br0">)</span><span class="sy0">;</span>
+  lcd.<span class="me1">setCursor</span><span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+  lcd.<span class="me1">print</span><span class="br0">(</span><span class="st0">"   LinkSprite"</span><span class="br0">)</span><span class="sy0">;</span>
+  lcd.<span class="me1">print</span><span class="br0">(</span><span class="st0">"    LCD Shield"</span><span class="br0">)</span><span class="sy0">;</span>
+  delay<span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+  lcd.<span class="me1">setCursor</span><span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">;</span>
+  <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">char</span> k<span class="sy0">=</span><span class="nu0">0</span><span class="sy0">;</span>k<span class="sy0">&lt;</span><span class="nu0">26</span><span class="sy0">;</span>k<span class="sy0">++</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    lcd.<span class="me1">scrollDisplayLeft</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+    delay<span class="br0">(</span><span class="nu0">400</span><span class="br0">)</span><span class="sy0">;</span>
+  <span class="br0">}</span>
+  lcd.<span class="me1">clear</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+  lcd.<span class="me1">setCursor</span><span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">;</span> 
+  lcd.<span class="me1">print</span><span class="br0">(</span><span class="st0">"ADC key testing"</span><span class="br0">)</span><span class="sy0">;</span> 
+<span class="br0">}</span>
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+   adc_key_in <span class="sy0">=</span> analogRead<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">;</span>    <span class="co1">// read the value from the sensor </span>
+   key <span class="sy0">=</span> get_key<span class="br0">(</span>adc_key_in<span class="br0">)</span><span class="sy0">;</span>  <span class="co1">// convert into key press</span>
+   <span class="kw1">if</span> <span class="br0">(</span>key <span class="sy0">!=</span> oldkey<span class="br0">)</span>   <span class="co1">// if keypress is detected</span>
+   <span class="br0">{</span>
+     delay<span class="br0">(</span><span class="nu0">50</span><span class="br0">)</span><span class="sy0">;</span>  <span class="co1">// wait for debounce time</span>
+     adc_key_in <span class="sy0">=</span> analogRead<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">;</span>    <span class="co1">// read the value from the sensor </span>
+     key <span class="sy0">=</span> get_key<span class="br0">(</span>adc_key_in<span class="br0">)</span><span class="sy0">;</span>    <span class="co1">// convert into key press</span>
+     <span class="kw1">if</span> <span class="br0">(</span>key <span class="sy0">!=</span> oldkey<span class="br0">)</span>    
+     <span class="br0">{</span>   
+       lcd.<span class="me1">setCursor</span><span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+       oldkey <span class="sy0">=</span> key<span class="sy0">;</span>
+       <span class="kw1">if</span> <span class="br0">(</span>key <span class="sy0">&gt;=</span><span class="nu0">0</span><span class="br0">)</span>
+       <span class="br0">{</span>
+           lcd.<span class="me1">print</span><span class="br0">(</span>msgs<span class="br0">[</span>key<span class="br0">]</span><span class="br0">)</span><span class="sy0">;</span>              
+       <span class="br0">}</span>
+     <span class="br0">}</span>
+   <span class="br0">}</span>
+   delay<span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+<span class="co1">// Convert ADC value to key number</span>
+<span class="kw4">int</span> get_key<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">int</span> input<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> k<span class="sy0">;</span>
+    <span class="kw1">for</span> <span class="br0">(</span>k <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> k <span class="sy0">&lt;</span> NUM_KEYS<span class="sy0">;</span> k<span class="sy0">++</span><span class="br0">)</span>
+    <span class="br0">{</span>
+      <span class="kw1">if</span> <span class="br0">(</span>input <span class="sy0">&lt;</span> adc_key_val<span class="br0">[</span>k<span class="br0">]</span><span class="br0">)</span>
+      <span class="br0">{</span>
+        <span class="kw1">return</span> k<span class="sy0">;</span>
+      <span class="br0">}</span>
+    <span class="br0">}</span>   
+    <span class="kw1">if</span> <span class="br0">(</span>k <span class="sy0">&gt;=</span> NUM_KEYS<span class="br0">)</span>k <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span>  <span class="co1">// No valid key pressed</span>
+    <span class="kw1">return</span> k<span class="sy0">;</span>
+<span class="br0">}</span></pre></div></div>
+<h2><span class="mw-headline" id="Cautions">Cautions</span></h2>
+<p>The warnings and wrong operations possible cause dangerous. 
+</p>
+<h2><span class="mw-headline" id="Schematic">Schematic</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://s3.amazonaws.com/linksprite/Shields/16X2+LCD+Keypad+shield/1602+LCD+Shield+Sch.pdf">Schematic in PDF</a></li></ul>
+<h2><span class="mw-headline" id="Specification">Specification</span></h2>
+<table border="1" cellspacing="0" width="100%">
+
+<tbody><tr>
+<th scope="col" style="width: 50%" align="center"> Item
+</th>
+<th scope="col" align="center"> Min
+</th>
+<th scope="col" align="center"> Typical
+</th>
+<th scope="col" align="center"> Max
+</th>
+<th scope="col" align="center"> Unit
+</th></tr>
+<tr>
+<th scope="row"> Voltage
+</th>
+<td align="center"> 4.3
+</td>
+<td align="center"> 5.0
+</td>
+<td align="center"> 5.7
+</td>
+<td align="center"> V
+</td></tr>
+<tr>
+<th scope="row"> Current
+</th>
+<td align="center"> 39.6
+</td>
+<td align="center"> 53.3
+</td>
+<td align="center"> 65.0
+</td>
+<td align="center"> mA
+</td></tr>
+<tr>
+<th scope="row"> Dimension
+</th>
+<td align="center" colspan="3"> 79.5x55.1x16.6
+</td>
+<td align="center"> mm
+</td></tr>
+<tr>
+<th scope="row"> Net Weight
+</th>
+<td align="center" colspan="3"> 55.0
+</td>
+<td align="center"> g
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Pin_definition_and_Rating">Pin definition and Rating</span></h2>
+<ul><li>A0: Buttons</li>
+<li>D4: LCD bit 4</li>
+<li>D5: LCD bit 5</li>
+<li>D6: LCD bit 6</li>
+<li>D7: LCD bit 7</li>
+<li>D8: LCD RS</li>
+<li>D9: LCD Enable</li>
+<li>LCD backlight with current limiting, brightness and on/off controllable by D10.</li></ul>
+<h2><span class="mw-headline" id="Mechanic_Dimensions">Mechanic Dimensions</span></h2>
+<p><a href="http://linksprite.com/wiki/index.php5?title=File:%E5%9B%BE%E7%89%871.jpg" class="image"><img alt="图片1.jpg" src="./16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound_files/图片1.jpg" width="769" height="464"></a>
+<a href="http://linksprite.com/wiki/index.php5?title=File:%E5%9B%BE%E7%89%872.jpg" class="image"><img alt="图片2.jpg" src="./16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound_files/图片2.jpg" width="548" height="281"></a>
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>The 16x2 LCD And Keypad Shield is very simple to use because it's fully compatible with the Arduino "LiquidCrystal" library. You can initialise the LCD and display messages on it with just a few lines of code, but it also gives you the flexibility to do more advanced projects such as display menu items and select them using the buttons.
+</p><p><b>Power Requirements</b>
+</p><p>The LCD &amp; Keypad Shield requires a good 5V power supply to ensure the backlight fully illuminates and the display contrast is high, and if you power your Arduino from USB with the LCD Shield attached you may experience a voltage drop over the USB cable. If you have trouble with display contrast or backlight brightness, try attaching a power supply of around 7 to 9Vdc to the 2.1mm DC jack on the Arduino. A typical symptom in an undervoltage situation is that one line of the LCD will show pale rectangles in place of the characters, and the other line will show nothing at all. The Arduino may even continue running normally because it's quite happy at just 4V or so, but the LCD &amp; Keypad Shield won't function.
+</p><p><b>Library Requirements</b>
+</p><p>All the hard work of interfacing with the LCD Shield is handled by the LiquidCrystal library, which is included as part of the official Arduino distribution. You can check whether you have it installed by starting up the IDE and looking under Files -&gt; Examples -&gt; LiquidCrystal. If it exists, you're good to go.
+</p><p><b>Minimal Display Example</b>
+</p><p>To start up the LCD and display a message, open a new sketch in the Arduino IDE and paste in the following code:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="c source-c"><pre class="de1"><span class="co2">#include &lt;LiquidCrystal.h&gt;</span>
+&nbsp;
+LiquidCrystal lcd<span class="br0">(</span> <span class="nu0">8</span><span class="sy0">,</span> <span class="nu0">9</span><span class="sy0">,</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">5</span><span class="sy0">,</span> <span class="nu0">6</span><span class="sy0">,</span> <span class="nu0">7</span> <span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  lcd.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">16</span><span class="sy0">,</span> <span class="nu0">2</span><span class="br0">)</span><span class="sy0">;</span>
+  lcd.<span class="me1">print</span><span class="br0">(</span><span class="st0">"hello, world!"</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="co1">// your main loop code here...</span>
+<span class="br0">}</span></pre></div></div>
+<p><b>Reading The Buttons</b>
+</p><p><br>
+The LCD Shield includes 5 buttons designed for use as navigational or control input. The buttons are arranged in a handy pattern and referred to as UP, DOWN, LEFT, RIGHT, and SELECT, but of course it's totally up to your sketch to decide what to do when any particular button is pressed.
+</p><p>All the buttons are connected to a single analog input, A0, using a chain of resistors that causes a different reference voltage to be applied to A0 depending on which button is pressed. This section of the shield schematic shows the input buttons and associated resistors:
+</p><p><br>
+<a href="http://linksprite.com/wiki/index.php5?title=File:Lcd-button-ladder.png" class="image"><img alt="Lcd-button-ladder.png" src="./16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound_files/400px-Lcd-button-ladder.png" width="400" height="362" srcset="/wiki/images/d/d2/Lcd-button-ladder.png 1.5x, /wiki/images/d/d2/Lcd-button-ladder.png 2x"></a>
+</p><p>As you can see, if no button is being pressed the voltage on A0 will be pulled all the way up to 5V by the 2K resistor called R6. In that situation none of the other resistors have any effect at all, and the analog reading on A0 will be hard on the upper limit of 1023. Therefore if you perform an analogRead() call on A0 and it returns 1023 (or any value above about 1000) you know that no buttons are being pressed.
+</p><p>Now consider what happens if the "DOWN" button is pressed. Now A0 is being presented with a voltage that is divided between the 2K resistor that is trying to pull it up to 5V, and the 330R and 620R resistors in series (totaling 950R) that are trying to pull it down to 0V. The voltage presented to A0 in that case is about 1.61V, which means if you perform an analogRead() on A0 it will return a value of about 329. So if you read a value of about 329 from A0 you know the "DOWN" button is being pressed.
+</p><p>The same principle applies for the other buttons, with the voltages and equivalent analogRead() values shown on the schematic above.
+</p><p>This is a neat way to provide a whole set of input buttons while only using up one of the I/O pins on your Arduino, leaving more pins free for use in your project.
+</p><p><br>
+<b>Complex Example</b>
+</p><p>The extensive example below combines a number of techniques to demonstrate how to show messages on the LCD, read from the buttons, and change the display message depending on which buttons are pressed.
+</p><p><br>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="c source-c"><pre class="de1"><span class="coMULTI">/*
+&nbsp;
+  This example code is in the public domain.
+&nbsp;
+  ---------------------------------------------------------------------
+&nbsp;
+  This program demonstrates button detection, LCD text/number printing,
+  and LCD backlight control on the Freetronics LCD &amp; Keypad Shield, connected to an Arduino board.
+&nbsp;
+&nbsp;
+  Pins used by LCD &amp; Keypad Shield:
+&nbsp;
+    A0: Buttons, analog input from voltage ladder
+    D4: LCD bit 4
+    D5: LCD bit 5
+    D6: LCD bit 6
+    D7: LCD bit 7
+    D8: LCD RS
+    D9: LCD E
+    D10: LCD Backlight (high = on, also has pullup high so default is on)
+&nbsp;
+  ADC voltages for the 5 buttons on analog input pin A0:
+&nbsp;
+    RIGHT:  0.00V&nbsp;:   0 @ 8bit&nbsp;;   0 @ 10 bit
+    UP:     0.71V&nbsp;:  36 @ 8bit&nbsp;; 145 @ 10 bit
+    DOWN:   1.61V&nbsp;:  82 @ 8bit&nbsp;; 329 @ 10 bit
+    LEFT:   2.47V&nbsp;: 126 @ 8bit&nbsp;; 505 @ 10 bit
+    SELECT: 3.62V&nbsp;: 185 @ 8bit&nbsp;; 741 @ 10 bit
+*/</span>
+<span class="coMULTI">/*--------------------------------------------------------------------------------------
+  Includes
+--------------------------------------------------------------------------------------*/</span>
+<span class="co2">#include &lt;LiquidCrystal.h&gt;   // include LCD library</span>
+<span class="coMULTI">/*--------------------------------------------------------------------------------------
+  Defines
+--------------------------------------------------------------------------------------*/</span>
+<span class="co1">// Pins in use</span>
+<span class="co2">#define BUTTON_ADC_PIN           A0  // A0 is the button ADC input</span>
+<span class="co2">#define LCD_BACKLIGHT_PIN         10  // D10 controls LCD backlight</span>
+<span class="co1">// ADC readings expected for the 5 buttons on the ADC input</span>
+<span class="co2">#define RIGHT_10BIT_ADC           0  // right</span>
+<span class="co2">#define UP_10BIT_ADC            145  // up</span>
+<span class="co2">#define DOWN_10BIT_ADC          329  // down</span>
+<span class="co2">#define LEFT_10BIT_ADC          505  // left</span>
+<span class="co2">#define SELECT_10BIT_ADC        741  // right</span>
+<span class="co2">#define BUTTONHYSTERESIS         10  // hysteresis for valid button sensing window</span>
+<span class="co1">//return values for ReadButtons()</span>
+<span class="co2">#define BUTTON_NONE               0  // </span>
+<span class="co2">#define BUTTON_RIGHT              1  // </span>
+<span class="co2">#define BUTTON_UP                 2  // </span>
+<span class="co2">#define BUTTON_DOWN               3  // </span>
+<span class="co2">#define BUTTON_LEFT               4  // </span>
+<span class="co2">#define BUTTON_SELECT             5  // </span>
+<span class="co1">//some example macros with friendly labels for LCD backlight/pin control, tested and can be swapped into the example code as you like</span>
+<span class="co2">#define LCD_BACKLIGHT_OFF()     digitalWrite( LCD_BACKLIGHT_PIN, LOW )</span>
+<span class="co2">#define LCD_BACKLIGHT_ON()      digitalWrite( LCD_BACKLIGHT_PIN, HIGH )</span>
+<span class="co2">#define LCD_BACKLIGHT(state)    { if( state ){digitalWrite( LCD_BACKLIGHT_PIN, HIGH );}else{digitalWrite( LCD_BACKLIGHT_PIN, LOW );} }</span>
+<span class="coMULTI">/*--------------------------------------------------------------------------------------
+  Variables
+--------------------------------------------------------------------------------------*/</span>
+byte buttonJustPressed  <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>         <span class="co1">//this will be true after a ReadButtons() call if triggered</span>
+byte buttonJustReleased <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>         <span class="co1">//this will be true after a ReadButtons() call if triggered</span>
+byte buttonWas          <span class="sy0">=</span> BUTTON_NONE<span class="sy0">;</span>   <span class="co1">//used by ReadButtons() for detection of button events</span>
+<span class="coMULTI">/*--------------------------------------------------------------------------------------
+  Init the LCD library with the LCD pins to be used
+--------------------------------------------------------------------------------------*/</span>
+LiquidCrystal lcd<span class="br0">(</span> <span class="nu0">8</span><span class="sy0">,</span> <span class="nu0">9</span><span class="sy0">,</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">5</span><span class="sy0">,</span> <span class="nu0">6</span><span class="sy0">,</span> <span class="nu0">7</span> <span class="br0">)</span><span class="sy0">;</span>   <span class="co1">//Pins for the freetronics 16x2 LCD shield. LCD: ( RS, E, LCD-D4, LCD-D5, LCD-D6, LCD-D7 )</span>
+<span class="coMULTI">/*--------------------------------------------------------------------------------------
+  setup()
+  Called by the Arduino framework once, before the main loop begins
+--------------------------------------------------------------------------------------*/</span>
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="co1">//button adc input</span>
+   pinMode<span class="br0">(</span> BUTTON_ADC_PIN<span class="sy0">,</span> INPUT <span class="br0">)</span><span class="sy0">;</span>         <span class="co1">//ensure A0 is an input</span>
+   digitalWrite<span class="br0">(</span> BUTTON_ADC_PIN<span class="sy0">,</span> LOW <span class="br0">)</span><span class="sy0">;</span>      <span class="co1">//ensure pullup is off on A0</span>
+   <span class="co1">//lcd backlight control</span>
+   digitalWrite<span class="br0">(</span> LCD_BACKLIGHT_PIN<span class="sy0">,</span> HIGH <span class="br0">)</span><span class="sy0">;</span>  <span class="co1">//backlight control pin D3 is high (on)</span>
+   pinMode<span class="br0">(</span> LCD_BACKLIGHT_PIN<span class="sy0">,</span> OUTPUT <span class="br0">)</span><span class="sy0">;</span>     <span class="co1">//D3 is an output</span>
+   <span class="co1">//set up the LCD number of columns and rows: </span>
+   lcd.<span class="me1">begin</span><span class="br0">(</span> <span class="nu0">16</span><span class="sy0">,</span> <span class="nu0">2</span> <span class="br0">)</span><span class="sy0">;</span>
+   <span class="co1">//Print some initial text to the LCD.</span>
+   lcd.<span class="me1">setCursor</span><span class="br0">(</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span> <span class="br0">)</span><span class="sy0">;</span>   <span class="co1">//top left</span>
+   <span class="co1">//          1234567890123456</span>
+   lcd.<span class="me1">print</span><span class="br0">(</span> <span class="st0">"LinkSprite  16x2"</span> <span class="br0">)</span><span class="sy0">;</span>
+   <span class="co1">//</span>
+   lcd.<span class="me1">setCursor</span><span class="br0">(</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">1</span> <span class="br0">)</span><span class="sy0">;</span>   <span class="co1">//bottom left</span>
+   <span class="co1">//          1234567890123456</span>
+   lcd.<span class="me1">print</span><span class="br0">(</span> <span class="st0">"Btn:"</span> <span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+<span class="coMULTI">/*--------------------------------------------------------------------------------------
+  loop()
+  Arduino main loop
+--------------------------------------------------------------------------------------*/</span>
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+   byte button<span class="sy0">;</span>
+   byte timestamp<span class="sy0">;</span>
+&nbsp;
+   <span class="co1">//get the latest button pressed, also the buttonJustPressed, buttonJustReleased flags</span>
+   button <span class="sy0">=</span> ReadButtons<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+   <span class="co1">//blank the demo text line if a new button is pressed or released, ready for a new label to be written</span>
+   <span class="kw1">if</span><span class="br0">(</span> buttonJustPressed <span class="sy0">||</span> buttonJustReleased <span class="br0">)</span>
+   <span class="br0">{</span>
+     lcd.<span class="me1">setCursor</span><span class="br0">(</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">1</span> <span class="br0">)</span><span class="sy0">;</span>
+     lcd.<span class="me1">print</span><span class="br0">(</span> <span class="st0">"            "</span> <span class="br0">)</span><span class="sy0">;</span>
+   <span class="br0">}</span>
+   <span class="co1">//show text label for the button pressed</span>
+   <span class="kw1">switch</span><span class="br0">(</span> button <span class="br0">)</span>
+   <span class="br0">{</span>
+      <span class="kw1">case</span> BUTTON_NONE<span class="sy0">:</span>
+      <span class="br0">{</span>
+         <span class="kw2">break</span><span class="sy0">;</span>
+      <span class="br0">}</span>
+      <span class="kw1">case</span> BUTTON_RIGHT<span class="sy0">:</span>
+      <span class="br0">{</span>
+         lcd.<span class="me1">setCursor</span><span class="br0">(</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">1</span> <span class="br0">)</span><span class="sy0">;</span>
+         lcd.<span class="me1">print</span><span class="br0">(</span> <span class="st0">"RIGHT"</span> <span class="br0">)</span><span class="sy0">;</span>
+         <span class="kw2">break</span><span class="sy0">;</span>
+      <span class="br0">}</span>
+      <span class="kw1">case</span> BUTTON_UP<span class="sy0">:</span>
+      <span class="br0">{</span>
+         lcd.<span class="me1">setCursor</span><span class="br0">(</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">1</span> <span class="br0">)</span><span class="sy0">;</span>
+         lcd.<span class="me1">print</span><span class="br0">(</span> <span class="st0">"UP"</span> <span class="br0">)</span><span class="sy0">;</span>
+         <span class="kw2">break</span><span class="sy0">;</span>
+      <span class="br0">}</span>
+      <span class="kw1">case</span> BUTTON_DOWN<span class="sy0">:</span>
+      <span class="br0">{</span>
+         lcd.<span class="me1">setCursor</span><span class="br0">(</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">1</span> <span class="br0">)</span><span class="sy0">;</span>
+         lcd.<span class="me1">print</span><span class="br0">(</span> <span class="st0">"DOWN"</span> <span class="br0">)</span><span class="sy0">;</span>
+         <span class="kw2">break</span><span class="sy0">;</span>
+      <span class="br0">}</span>
+      <span class="kw1">case</span> BUTTON_LEFT<span class="sy0">:</span>
+      <span class="br0">{</span>
+        lcd.<span class="me1">setCursor</span><span class="br0">(</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">1</span> <span class="br0">)</span><span class="sy0">;</span>
+        lcd.<span class="me1">print</span><span class="br0">(</span> <span class="st0">"LEFT"</span> <span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw2">break</span><span class="sy0">;</span>
+     <span class="br0">}</span>
+     <span class="kw1">case</span> BUTTON_SELECT<span class="sy0">:</span>
+     <span class="br0">{</span>
+        lcd.<span class="me1">setCursor</span><span class="br0">(</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">1</span> <span class="br0">)</span><span class="sy0">;</span>
+        lcd.<span class="me1">print</span><span class="br0">(</span> <span class="st0">"SELECT-FLASH"</span> <span class="br0">)</span><span class="sy0">;</span>    
+&nbsp;
+        <span class="co1">//SELECT is a special case, it pulses the LCD backlight off and on for demo</span>
+        digitalWrite<span class="br0">(</span> LCD_BACKLIGHT_PIN<span class="sy0">,</span> LOW <span class="br0">)</span><span class="sy0">;</span>
+        delay<span class="br0">(</span> <span class="nu0">150</span> <span class="br0">)</span><span class="sy0">;</span>
+        digitalWrite<span class="br0">(</span> LCD_BACKLIGHT_PIN<span class="sy0">,</span> HIGH <span class="br0">)</span><span class="sy0">;</span>   <span class="co1">//leave the backlight on at exit</span>
+        delay<span class="br0">(</span> <span class="nu0">150</span> <span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="coMULTI">/* an example of LCD backlight control via macros with nice labels
+        LCD_BACKLIGHT_OFF();
+        delay( 150 );
+        LCD_BACKLIGHT_ON();   //leave the backlight on at exit
+        delay( 150 );
+        */</span>
+&nbsp;
+        <span class="coMULTI">/*
+        // an example of LCD backlight control via a macro with nice label, called with a value
+        LCD_BACKLIGHT(false);
+        delay( 150 );
+        LCD_BACKLIGHT(true);   //leave the backlight on at exit
+        delay( 150 );
+        */</span>
+&nbsp;
+        <span class="kw2">break</span><span class="sy0">;</span>
+      <span class="br0">}</span>
+      <span class="kw1">default</span><span class="sy0">:</span>
+     <span class="br0">{</span>
+        <span class="kw2">break</span><span class="sy0">;</span>
+     <span class="br0">}</span>
+   <span class="br0">}</span>
+   <span class="co1">// print the number of seconds since reset (two digits only)</span>
+   timestamp <span class="sy0">=</span> <span class="br0">(</span> <span class="br0">(</span>millis<span class="br0">(</span><span class="br0">)</span> <span class="sy0">/</span> <span class="nu0">1000</span><span class="br0">)</span> <span class="sy0">%</span> <span class="nu0">100</span> <span class="br0">)</span><span class="sy0">;</span>   <span class="co1">//"% 100" is the remainder of a divide-by-100, which keeps the value as 0-99 even as the result goes over 100</span>
+   lcd.<span class="me1">setCursor</span><span class="br0">(</span> <span class="nu0">14</span><span class="sy0">,</span> <span class="nu0">1</span> <span class="br0">)</span><span class="sy0">;</span>
+   <span class="kw1">if</span><span class="br0">(</span> timestamp <span class="sy0">&lt;=</span> <span class="nu0">9</span> <span class="br0">)</span>
+      lcd.<span class="me1">print</span><span class="br0">(</span> <span class="st0">" "</span> <span class="br0">)</span><span class="sy0">;</span>   <span class="co1">//quick trick to right-justify this 2 digit value when it's a single digit</span>
+   lcd.<span class="me1">print</span><span class="br0">(</span> timestamp<span class="sy0">,</span> DEC <span class="br0">)</span><span class="sy0">;</span>
+<span class="coMULTI">/*  
+   //debug/test display of the adc reading for the button input voltage pin.
+   lcd.setCursor(12, 0);
+   lcd.print( "    " );          //quick hack to blank over default left-justification from lcd.print()
+   lcd.setCursor(12, 0);         //note the value will be flickering/faint on the LCD
+   lcd.print( analogRead( BUTTON_ADC_PIN ) );
+*/</span>
+   <span class="co1">//clear the buttonJustPressed or buttonJustReleased flags, they've already done their job now.</span>
+   <span class="kw1">if</span><span class="br0">(</span> buttonJustPressed <span class="br0">)</span>
+      buttonJustPressed <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+   <span class="kw1">if</span><span class="br0">(</span> buttonJustReleased <span class="br0">)</span>
+      buttonJustReleased <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+<span class="br0">}</span>
+<span class="coMULTI">/*--------------------------------------------------------------------------------------
+  ReadButtons()
+  Detect the button pressed and return the value
+  Uses global values buttonWas, buttonJustPressed, buttonJustReleased.
+--------------------------------------------------------------------------------------*/</span>
+byte ReadButtons<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="kw4">unsigned</span> <span class="kw4">int</span> buttonVoltage<span class="sy0">;</span>
+   byte button <span class="sy0">=</span> BUTTON_NONE<span class="sy0">;</span>   <span class="co1">// return no button pressed if the below checks don't write to btn</span>
+&nbsp;
+   <span class="co1">//read the button ADC pin voltage</span>
+   buttonVoltage <span class="sy0">=</span> analogRead<span class="br0">(</span> BUTTON_ADC_PIN <span class="br0">)</span><span class="sy0">;</span>
+   <span class="co1">//sense if the voltage falls within valid voltage windows</span>
+   <span class="kw1">if</span><span class="br0">(</span> buttonVoltage <span class="sy0">&lt;</span> <span class="br0">(</span> RIGHT_10BIT_ADC <span class="sy0">+</span> BUTTONHYSTERESIS <span class="br0">)</span> <span class="br0">)</span>
+   <span class="br0">{</span>
+      button <span class="sy0">=</span> BUTTON_RIGHT<span class="sy0">;</span>
+   <span class="br0">}</span>
+   <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">(</span>   buttonVoltage <span class="sy0">&gt;=</span> <span class="br0">(</span> UP_10BIT_ADC <span class="sy0">-</span> BUTTONHYSTERESIS <span class="br0">)</span>
+           <span class="sy0">&amp;&amp;</span> buttonVoltage <span class="sy0">&lt;=</span> <span class="br0">(</span> UP_10BIT_ADC <span class="sy0">+</span> BUTTONHYSTERESIS <span class="br0">)</span> <span class="br0">)</span>
+   <span class="br0">{</span>
+      button <span class="sy0">=</span> BUTTON_UP<span class="sy0">;</span>
+   <span class="br0">}</span>
+   <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">(</span>   buttonVoltage <span class="sy0">&gt;=</span> <span class="br0">(</span> DOWN_10BIT_ADC <span class="sy0">-</span> BUTTONHYSTERESIS <span class="br0">)</span>
+           <span class="sy0">&amp;&amp;</span> buttonVoltage <span class="sy0">&lt;=</span> <span class="br0">(</span> DOWN_10BIT_ADC <span class="sy0">+</span> BUTTONHYSTERESIS <span class="br0">)</span> <span class="br0">)</span>
+   <span class="br0">{</span>
+      button <span class="sy0">=</span> BUTTON_DOWN<span class="sy0">;</span>
+   <span class="br0">}</span>
+   <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">(</span>   buttonVoltage <span class="sy0">&gt;=</span> <span class="br0">(</span> LEFT_10BIT_ADC <span class="sy0">-</span> BUTTONHYSTERESIS <span class="br0">)</span>
+           <span class="sy0">&amp;&amp;</span> buttonVoltage <span class="sy0">&lt;=</span> <span class="br0">(</span> LEFT_10BIT_ADC <span class="sy0">+</span> BUTTONHYSTERESIS <span class="br0">)</span> <span class="br0">)</span>
+   <span class="br0">{</span>
+      button <span class="sy0">=</span> BUTTON_LEFT<span class="sy0">;</span>
+   <span class="br0">}</span>
+   <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">(</span>   buttonVoltage <span class="sy0">&gt;=</span> <span class="br0">(</span> SELECT_10BIT_ADC <span class="sy0">-</span> BUTTONHYSTERESIS <span class="br0">)</span>
+           <span class="sy0">&amp;&amp;</span> buttonVoltage <span class="sy0">&lt;=</span> <span class="br0">(</span> SELECT_10BIT_ADC <span class="sy0">+</span> BUTTONHYSTERESIS <span class="br0">)</span> <span class="br0">)</span>
+   <span class="br0">{</span>
+      button <span class="sy0">=</span> BUTTON_SELECT<span class="sy0">;</span>
+   <span class="br0">}</span>
+   <span class="co1">//handle button flags for just pressed and just released events</span>
+   <span class="kw1">if</span><span class="br0">(</span> <span class="br0">(</span> buttonWas <span class="sy0">==</span> BUTTON_NONE <span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span> button <span class="sy0">!=</span> BUTTON_NONE <span class="br0">)</span> <span class="br0">)</span>
+   <span class="br0">{</span>
+      <span class="co1">//the button was just pressed, set buttonJustPressed, this can optionally be used to trigger a once-off action for a button press event</span>
+      <span class="co1">//it's the duty of the receiver to clear these flags if it wants to detect a new button change event</span>
+      buttonJustPressed  <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span>
+      buttonJustReleased <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+   <span class="br0">}</span>
+   <span class="kw1">if</span><span class="br0">(</span> <span class="br0">(</span> buttonWas <span class="sy0">!=</span> BUTTON_NONE <span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span> button <span class="sy0">==</span> BUTTON_NONE <span class="br0">)</span> <span class="br0">)</span>
+   <span class="br0">{</span>
+      buttonJustPressed  <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+      buttonJustReleased <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span>
+   <span class="br0">}</span>
+&nbsp;
+   <span class="co1">//save the latest button value, for change event detection next time round</span>
+   buttonWas <span class="sy0">=</span> button<span class="sy0">;</span>
+&nbsp;
+   <span class="kw1">return</span><span class="br0">(</span> button <span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span></pre></div></div>
+<h2><span class="mw-headline" id="pcDuino_Sample_Code">pcDuino Sample Code</span></h2>
+<h2><span class="mw-headline" id="FAQ">FAQ</span></h2>
+<p>Please list your question here:
+</p>
+<h2><span class="mw-headline" id="Support">Support</span></h2>
+<p>If you have questions or other better design ideas, you can go to our <a rel="nofollow" class="external text" href="http://linksprite.invisionzone.com/">forum</a> to discuss or creat a ticket for your issue at <a rel="nofollow" class="external text" href="http://www.linksprite.com/support/">linksprite support</a>.
+</p>
+<h2><span class="mw-headline" id="Resources">Resources</span></h2>
+<ul><li>PDF Files
+<ul><li><a rel="nofollow" class="external text" href="https://s3.amazonaws.com/linksprite/Shields/16X2+LCD+Keypad+shield/lcd-datasheet-dfr0009.pdf">LCD Datasheet</a></li>
+<li><a rel="nofollow" class="external text" href="https://s3.amazonaws.com/linksprite/Shields/16X2+LCD+Keypad+shield/HD44780.pdf">HD44780 Datasheet</a></li>
+<li><a rel="nofollow" class="external text" href="https://s3.amazonaws.com/linksprite/Shields/16X2+LCD+Keypad+shield/ZYMC1602-17.pdf">16x2 LCD Datasheet</a></li></ul></li></ul>
+<ul><li>ZIP Files
+<ul><li><a rel="nofollow" class="external text" href="https://s3.amazonaws.com/linksprite/Shields/16X2+LCD+Keypad+shield/LCD4Bit_mod.zip">LCD 4Bit Mod</a></li>
+<li><a rel="nofollow" class="external text" href="https://s3.amazonaws.com/linksprite/Shields/16X2+LCD+Keypad+shield/LCD4Bit_mod(for+Arduino+1.0.5-r2).zip">LCD 4Bit Mod for Arduino 1.0.5-r2/Arduino 1.5.6-r2</a></li>
+<li><a rel="nofollow" class="external text" href="https://s3.amazonaws.com/linksprite/Shields/16X2+LCD+Keypad+shield/lcd-keypad-library-dfr0009.zip">LCD Keypad Library</a></li>
+<li><a rel="nofollow" class="external text" href="https://s3.amazonaws.com/linksprite/Shields/16X2+LCD+Keypad+shield/key-grabber-library-v2-dfr0009.zip">Key Grabber Library V2</a></li></ul></li></ul>
+<h2><span class="mw-headline" id="How_to_buy">How to buy</span></h2>
+<p>Here to buy 16 X 2 LCD Keypad Shield for Arduino on store <a rel="nofollow" class="external text" href="http://store.linksprite.com/linksprite-16x2-lcd-keypad-shield-for-arduino-version-a/">A</a> or <a rel="nofollow" class="external text" href="http://store.linksprite.com/linksprite-16x2-lcd-keypad-shield-for-arduino-version-b/">B</a>
+</p>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<p>Other related products and resources.
+</p>
+<h2><span class="mw-headline" id="Licensing">Licensing</span></h2>
+<p>This documentation is licensed under the Creative Commons <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a rel="nofollow" class="external text" href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.232 seconds
+Real time usage: 0.313 seconds
+Preprocessor visited node count: 89/1000000
+Preprocessor generated node count: 128/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key linkspri_wiki:pcache:idhash:4-0!*!*!!en!5!* and timestamp 20170704082114 and revision id 7361
+ -->
+<div class="hf-footer"></div><div class="hf-nsfooter"></div></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino&amp;oldid=7361">http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino&amp;oldid=7361</a>"					</div>
+													<div id="catlinks" class="catlinks catlinks-allhidden"></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://linksprite.com/wiki/index.php5?title=Special:UserLogin&amp;returnto=16+X+2+LCD+Keypad+Shield+for+Arduino&amp;type=signup">Create account</a></li><li id="pt-login"><a href="http://linksprite.com/wiki/index.php5?title=Special:UserLogin&amp;returnto=16+X+2+LCD+Keypad+Shield+for+Arduino" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino" title="View the content page [alt-shift-c]" accesskey="c">Page</a></span></li>
+															<li id="ca-talk" class="new"><span><a href="http://linksprite.com/wiki/index.php5?title=Talk:16_X_2_LCD_Keypad_Shield_for_Arduino&amp;action=edit&amp;redlink=1" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0"><span>Variants</span><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino">Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino&amp;action=edit" title="This page is protected.
+You can view its source [alt-shift-e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label" tabindex="0"><span>More</span><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://linksprite.com/wiki/index.php5" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search LinkSprite Playgound [alt-shift-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"><input type="hidden" value="Special:Search" name="title"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton">								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a style="background-image: url(/wiki/skins/common/images/linksprite_logo.gif);" href="http://linksprite.com/wiki/index.php5?title=Main_Page" title="Visit the main page"></a></div>
+						<div class="portal first" role="navigation" id="p-Structure" aria-labelledby="p-Structure-label">
+			<h3 id="p-Structure-label">Structure</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-Open-Source-Products"><a href="http://linksprite.com/wiki/index.php5?title=Products-description">Open Source Products</a></li>
+													<li id="n-Home-Automation-Products"><a href="http://linksprite.com/wiki/index.php5?title=Home-automation">Home Automation Products</a></li>
+													<li id="n-Open-Source-Projects"><a href="http://linksprite.com/wiki/index.php5?title=Projects">Open Source Projects</a></li>
+													<li id="n-Modems"><a href="http://linksprite.com/wiki/index.php5?title=Modems">Modems</a></li>
+													<li id="n-DLNA.2FMirror-Products"><a href="http://linksprite.com/wiki/index.php5?title=DLNA/Mirror_Products">DLNA/Mirror Products</a></li>
+													<li id="n-Services"><a href="http://linksprite.com/wiki/index.php5?title=Services">Services</a></li>
+													<li id="n-Retired"><a href="http://linksprite.com/wiki/index.php5?title=Retired">Retired</a></li>
+													<li id="n-Articles"><a href="http://linksprite.com/wiki/index.php5?title=Articles">Articles</a></li>
+													<li id="n-Components-for-kits"><a href="http://linksprite.com/wiki/index.php5?title=Components_for_kits">Components for kits</a></li>
+													<li id="n-portal"><a href="http://linksprite.com/wiki/index.php5?title=LinkSprite_Playgound:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-currentevents"><a href="http://linksprite.com/wiki/index.php5?title=LinkSprite_Playgound:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-recentchanges"><a href="http://linksprite.com/wiki/index.php5?title=Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+													<li id="n-randompage"><a href="http://linksprite.com/wiki/index.php5?title=Special:Random" title="Load a random page [alt-shift-x]" accesskey="x">Random page</a></li>
+													<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://linksprite.com/wiki/index.php5?title=Special:WhatLinksHere/16_X_2_LCD_Keypad_Shield_for_Arduino" title="A list of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://linksprite.com/wiki/index.php5?title=Special:RecentChangesLinked/16_X_2_LCD_Keypad_Shield_for_Arduino" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+													<li id="t-specialpages"><a href="http://linksprite.com/wiki/index.php5?title=Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+													<li id="t-print"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino&amp;printable=yes" rel="alternate" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>
+													<li id="t-permalink"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino&amp;oldid=7361" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://linksprite.com/wiki/index.php5?title=16_X_2_LCD_Keypad_Shield_for_Arduino&amp;action=info">Page information</a></li>
+											</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 6 September 2015, at 00:12.</li>
+											<li id="footer-info-viewcount">This page has been accessed 141,023 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://linksprite.com/wiki/index.php5?title=LinkSprite_Playgound:Privacy_policy" title="LinkSprite Playgound:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://linksprite.com/wiki/index.php5?title=LinkSprite_Playgound:About" title="LinkSprite Playgound:About">About LinkSprite Playgound</a></li>
+											<li id="footer-places-disclaimer"><a href="http://linksprite.com/wiki/index.php5?title=LinkSprite_Playgound:General_disclaimer" title="LinkSprite Playgound:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="./16 X 2 LCD Keypad Shield for Arduino - LinkSprite Playgound_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"ready","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":368});
+}</script>
+	
+
+	<div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
